@@ -7,7 +7,8 @@
 
   /* size */
   --height-header: 90px;
-  --height-minusHeader: calc(100svh - 90px);
+  --margin-header: 30px;
+  --height-minusHeader: calc(100svh - 90px - 30px);
   /* color */
   --color-mainBg: #1a1a1a;
   --color-mainBg-inv: #fff;

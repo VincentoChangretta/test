@@ -5,10 +5,11 @@ import { useFetchData } from "shared/api/hooks/useFetchData";
 import { SeminarCard } from "features/SeminarCard";
 import { RootState } from "app/store/store";
 import { setSeminars } from "app/store/Slices/seminarSlices";
+import { Page404 } from "features/Page404/Page404";
 
 export const SeminarsContent = () => {
   const dispatch = useDispatch();
-  const { data } = useFetchData<SeminarData>(serverURL);
+  const { data, error } = useFetchData<SeminarData>(serverURL);
   const seminars = useSelector((state: RootState) => state.seminars.seminars);
 
   useEffect(() => {
@@ -16,6 +17,10 @@ export const SeminarsContent = () => {
       dispatch(setSeminars(data));
     }
   }, [data]);
+
+  if (error) {
+    return <Page404/>;
+  }
 
   return (
     <section>

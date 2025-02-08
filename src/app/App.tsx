@@ -1,8 +1,8 @@
-import { Footer } from "widgets/Footer";
 import { Header } from "widgets/Header";
 import { AppRouter } from "./provider/router/ui/AppRouter";
 import { Modal, ModalContext, useModal } from "./provider/modal";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { Footer } from "widgets/Footer";
 
 function App() {
   const { isOpen, closeModal } = useModal();
@@ -21,8 +21,8 @@ function App() {
             modalContent={modalContent}
           />
         )}
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 }

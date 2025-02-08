@@ -7,4 +7,4 @@ export interface SeminarData {
   photo: string;
 }
 
-export const serverURL = "http://localhost:3000/seminars"
+export const serverURL = "http://localhost:3000/seminars";

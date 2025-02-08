@@ -5,13 +5,16 @@ import { ModalProvider } from "app/provider/modal";
 import { Provider } from "react-redux";
 import { store } from "app/store/store";
 import "app/styles/index.css";
+import { ErrorBoundary } from "app/provider/ErrorBoundary";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
     <Provider store={store}>
-      <ModalProvider>
-        <App />
-      </ModalProvider>
+      <ErrorBoundary>
+        <ModalProvider>
+          <App />
+        </ModalProvider>
+      </ErrorBoundary>
     </Provider>
   </BrowserRouter>
 );
