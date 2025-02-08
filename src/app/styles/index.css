@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-montserrat: "Montserrat", sans-serif;
+  --radius-stdRadius: 30px;
+
+  /* size */
+  --height-header: 90px;
+  --height-minusHeader: calc(100svh - 90px);
+  /* color */
+  --color-mainBg: #1a1a1a;
+  --color-mainBg-inv: #fff;
+}
+
+@layer components {
+  .app {
+    @apply flex flex-col min-h-svh font-montserrat text-xl bg-mainBg text-mainBg-inv
+  }
+
+  .main-container {
+    @apply max-w-[1520px] px-[10px] mx-auto
+  }
+
+  .button {
+    @apply max-w-[200px] w-full p-4 border-none outline-transparent bg-mainBg text-mainBg-inv cursor-pointer
+  }
+
+}
